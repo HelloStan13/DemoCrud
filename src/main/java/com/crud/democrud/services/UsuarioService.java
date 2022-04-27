@@ -4,6 +4,7 @@ import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -38,6 +39,7 @@ public class UsuarioService {
             return false;
         }
     }
+
 
 
     

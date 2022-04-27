@@ -1,6 +1,8 @@
 package com.crud.democrud.models;
 
 import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
@@ -10,10 +12,20 @@ public class UsuarioModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-
-    private String nombre;
+    private String name;
     private String email;
     private Integer prioridad;
+
+    @OneToMany(mappedBy = "id_Usuario")
+    private Set<RolModel> usuarioRols = new LinkedHashSet<>();
+
+    public Set<RolModel> getUsuarioRols() {
+        return usuarioRols;
+    }
+
+    public void setUsuarioRols(Set<RolModel> usuarioRols) {
+        this.usuarioRols = usuarioRols;
+    }
 
     public void setPrioridad(Integer prioridad) {
         this.prioridad = prioridad;
@@ -32,11 +44,11 @@ public class UsuarioModel {
     }
 
     public String getNombre() {
-        return nombre;
+        return name;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.name = nombre;
     }
 
     public String getEmail() {
@@ -44,7 +56,7 @@ public class UsuarioModel {
     }
 
     public UsuarioModel(String nombre, String email, Integer prioridad) {
-        this.nombre = nombre;
+        this.name = nombre;
         this.email = email;
         this.prioridad = prioridad;
     }
