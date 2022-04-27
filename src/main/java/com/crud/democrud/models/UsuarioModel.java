@@ -1,5 +1,9 @@
 package com.crud.democrud.models;
 
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import javax.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -35,7 +39,7 @@ public class UsuarioModel {
         this.id = id;
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
 
@@ -68,6 +72,5 @@ public class UsuarioModel {
     public UsuarioModel() {
 
     }
-
 
 }

@@ -3,6 +3,8 @@ import lombok.extern.slf4j.Slf4j;
 import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -24,6 +26,12 @@ public class UsuarioController {
     @PostMapping()
     public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario) {
         return this.usuarioService.guardarUsuario(usuario);
+    }
+    @PutMapping(path="/{id}/nombre")
+    public ResponseEntity<UsuarioModel> actualizaNombre(UsuarioModel usuario, @PathVariable("id") Long id) {
+        log.info("Usuario a modificar nombre: {}", usuario);
+        UsuarioService.actualizaNombre(id, usuario);
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 
     @GetMapping(path = "/{id}")

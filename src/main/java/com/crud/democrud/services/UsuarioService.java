@@ -1,6 +1,7 @@
 package com.crud.democrud.services;
 
 import com.crud.democrud.controllers.UsuarioController;
+import com.crud.democrud.dao.usuarioDao;
 import com.crud.democrud.models.UsuarioModel;
 
 import com.crud.democrud.repositories.UsuarioRepository;
@@ -22,6 +23,11 @@ public class UsuarioService {
 
     public UsuarioModel guardarUsuario(UsuarioModel usuario){
         return usuarioRepository.save(usuario);
+    }
+
+    @Transactional
+    public static void actualizaNombre(long id, UsuarioModel usuario){
+        usuarioDao.actualizaNombre(id, usuario.getNombre());
     }
 
     public Optional<UsuarioModel> obtenerPorId(Long id){
