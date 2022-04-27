@@ -10,7 +10,7 @@ public class RolModel {
     @Column(unique = true, nullable = false)
     private Long id_Rol;
     private String Rol;
-    private int id_Usuario;
+    private int id_usuario;
 
     public Long getId_Rol() {
         return id_Rol;
@@ -28,16 +28,16 @@ public class RolModel {
         Rol = rol;
     }
 
-    public int getId_Usuario() {
-        return id_Usuario;
+    public int getId_usuario() {
+        return id_usuario;
     }
 
-    public void setId_Usuario(int id_Usuario) {
-        this.id_Usuario = id_Usuario;
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
     public RolModel(String rol, int id_usuario) {
         this.Rol = rol;
-        this.id_Usuario = id_usuario;
+        this.id_usuario = id_usuario;
     }
     public RolModel() {
     }

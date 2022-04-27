@@ -1,5 +1,5 @@
 package com.crud.democrud.controllers;
-
+import lombok.extern.slf4j.Slf4j;
 import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @CrossOrigin
+@Slf4j
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
@@ -44,5 +45,4 @@ public class UsuarioController {
             return "No pudo eliminar el usuario con id" + id;
         }
     }
-
 }
