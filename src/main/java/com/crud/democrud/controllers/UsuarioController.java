@@ -50,6 +50,5 @@ public class UsuarioController {
     @PutMapping
     public void actualizarUsuario(@RequestBody UsuarioModel usuario){
     usuarioService.actualizar(usuario);
-
     }
 }

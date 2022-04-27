@@ -2,11 +2,11 @@ package com.crud.democrud.ServicesTest;
 
 import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.repositories.UsuarioRepository;
-import com.crud.democrud.services.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -39,4 +39,6 @@ public class UsuarioServiceTest {
         List<UsuarioModel> usuarioModelList=(List<UsuarioModel>) usuarioRepository.findAll();
         assertThat(usuarioModelList).size().isGreaterThan(0);
     }
+
+
 }
