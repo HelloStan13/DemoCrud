@@ -27,12 +27,6 @@ public class UsuarioController {
     public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario) {
         return this.usuarioService.guardarUsuario(usuario);
     }
-    @PutMapping(path="/{id}/nombre")
-    public ResponseEntity<UsuarioModel> actualizaNombre(UsuarioModel usuario, @PathVariable("id") Long id) {
-        log.info("Usuario a modificar nombre: {}", usuario);
-        UsuarioService.actualizaNombre(id, usuario);
-        return new ResponseEntity<>(usuario, HttpStatus.OK);
-    }
 
     @GetMapping(path = "/{id}")
     public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id) {
@@ -52,5 +46,10 @@ public class UsuarioController {
         } else {
             return "No pudo eliminar el usuario con id" + id;
         }
+    }
+    @PutMapping
+    public void actualizarUsuario(@RequestBody UsuarioModel usuario){
+    usuarioService.actualizar(usuario);
+
     }
 }
