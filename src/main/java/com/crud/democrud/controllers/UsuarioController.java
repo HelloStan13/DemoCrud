@@ -47,6 +47,7 @@ public class UsuarioController {
             return "No pudo eliminar el usuario con id" + id;
         }
     }
+    //actualiza usuario
     @PutMapping
     public void actualizarUsuario(@RequestBody UsuarioModel usuario){
     usuarioService.actualizar(usuario);

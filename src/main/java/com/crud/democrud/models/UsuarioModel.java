@@ -19,9 +19,12 @@ public class UsuarioModel {
     private String nombre;
     private String email;
     private Integer prioridad;
-
+//un usuario puede tener varios roles
     @OneToMany(mappedBy = "id_usuario")
     private Set<RolModel> usuarioRols = new LinkedHashSet<>();
+//constuctor para prueba de actualizar usuario
+    public UsuarioModel(int id, String aquaman) {
+    }
 
     public Set<RolModel> getUsuarioRols() {
         return usuarioRols;
