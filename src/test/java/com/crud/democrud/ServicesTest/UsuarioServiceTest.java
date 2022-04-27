@@ -30,6 +30,7 @@ public class UsuarioServiceTest {
         UsuarioModel usuarioModelRegistrado = usuarioRepository.save(usuarioModel);
         assertNotNull(usuarioModelRegistrado);
     }
+    //actualiza usuario
     @Test
     public void testActualizarUsuario(){
         UsuarioModel usuarioModel=new UsuarioModel();
@@ -59,7 +60,7 @@ public class UsuarioServiceTest {
         List<UsuarioModel> usuarioModelList=(List<UsuarioModel>) usuarioRepository.findAll();
         assertThat(usuarioModelList).size().isGreaterThan(0);
     }
-
+//obtener usuario por prioridad
     @Test
     public void testobtenerUsuarioPorPrioridad(){
         Long prioridad=1L;
