@@ -1,4 +1,8 @@
-# Demo Crud Web
+# 🌎 Demo Crud Web 🌎
+### Construido con 🛠️
+
+- Java
+- SpringBoot
 
 #### EndPoint de actualización de usuario
 ![act usu](https://user-images.githubusercontent.com/92740455/165664837-1ad7354b-24ba-481c-86b7-1252e1525d61.png)
